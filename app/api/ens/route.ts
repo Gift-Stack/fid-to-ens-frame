@@ -1,7 +1,7 @@
 import { getFrameHtmlResponse } from "@coinbase/onchainkit";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function getResponse(req?: NextRequest): Promise<NextResponse> {
+async function getResponse(req?: NextRequest): Promise<NextResponse> {
   return new NextResponse(
     getFrameHtmlResponse({
       buttons: [
