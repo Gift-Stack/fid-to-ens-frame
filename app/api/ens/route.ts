@@ -17,8 +17,7 @@ export async function getResponse(req?: NextRequest): Promise<NextResponse> {
 
 export async function GET() {
   const postUrl = process.env["HOST"] + `/api/ens`;
-  // const frameImageUrl = process.env["HOST"] + `/ens.webp`;
-  const frameImageUrl = "localhost:3000" + `/ens.webp`;
+  const frameImageUrl = process.env["HOST"] + `/ens.webp`;
 
   return Response.json(
     getFrameHtmlResponse({
