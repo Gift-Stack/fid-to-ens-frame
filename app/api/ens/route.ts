@@ -19,7 +19,7 @@ export async function GET() {
   const postUrl = process.env["HOST"] + `/api/ens`;
   const frameImageUrl = process.env["HOST"] + `/ens.webp`;
 
-  return Response.json(
+  return new Response(
     getFrameHtmlResponse({
       buttons: [
         {
@@ -28,7 +28,13 @@ export async function GET() {
       ],
       image: frameImageUrl,
       post_url: postUrl,
-    })
+    }),
+    {
+      status: 200,
+      headers: {
+        "Content-Type": "text/html",
+      },
+    }
   );
 }
 
